@@ -10,8 +10,8 @@
 
 	<div id="topblock">
 		<div id="langbox">
-			<a href="indexu.htm"><img src="../images/ua.png" alt="РЈРєСЂР°С—РЅСЃСЊРєР°" title="РЈРєСЂР°С—РЅСЃСЊРєР°" width="24" height="20" border=0></a> &nbsp; 
-			<a href="index.htm"><img src="../images/ru.png" alt="Р СѓСЃСЃРєРёР№" title="Р СѓСЃСЃРєРёР№" width="24" height="20" border=0></a> 
+			<a href="indexu.htm"><img src="../images/ua.png" alt="Українська" title="Українська" width="24" height="20" border=0></a> &nbsp; 
+			<a href="index.htm"><img src="../images/ru.png" alt="Русский" title="Русский" width="24" height="20" border=0></a> 
 		</div>
 		<div id="donntu">
 			<a href="http://donntu.org/index.php?lang=eng" target=_blank>DonNTU</a> &nbsp; 
@@ -41,208 +41,350 @@
 		</div>
 	
 		<div id="maintext">
-		
-			<h1>Abstract</h1>
 			
-			<h2>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h2>
-			<ul class=content>
-				<li class=ct1><a href="#p0">Introduction</a>
-				<li class=ct1><a href="#p1">1. Theme urgency</a>
-				<li class=ct1><a href="#p2">2. Goal and tasks of the research</a>
-				<li class=ct1><a href="#p3">3. An approach to the unification of synthesis of Moore FSM on FPGA</a>
-				<li class=ct1><a href="#p4">Conclusion</a>
-				<li class=ct1><a href="#ref">References</a>
-			</ul>
-			
-			<a name=p0></a>
-			<h2>Introduction</h2>
-			
-			<p> Digital systems are widely used as basic elements of computer technologies, automatics, robotics, manufacturing, transport. 
-			Creation of very large-scale integration circuits (VLSI), building of systems-on-chip (SoC), development of field-programmable gate 
-			arrays (FPGAs) and complex programmable logic devices (CPLDs) changed the basis of implementation digital systems and proposed 
-			increased requirements to the process of their design, which has led to the widespread using of computer-aided design (CAD) tools 
-			and hardware description languages (HDLs). All this should raise quality of the resultant product, promote in realization of multifold 
-			analysis and testing. Besides, new base-oriented methods of combinational and sequential synthesis of logical circuits were created, 
-			the greatest effectiveness from which can be reached in the case of application automation and joint combined using with already known algorithms.</p>
-			
-			<p>Model of Moore finite state machine (FSM, offered by E. Moore in 1956 and named in his honor), as synchronous sequential circuit, 
-			is the part of numerous digital systems and is used in construction of control devices. High complexity of integrated circuits 
-			(which is increasing, according to the G. Moore's law) and theoretical basis of automatic calculations make possible the implementation 
-			of comprehensive algorithms of processing information. However direct realization of algorithms can lead to inefficient using of 
-			crystal's resources and extension of project's cost.</p>
-			
-			
-			<a name=p1></a>
-			<h2>1. Theme urgency</h2>
-			
-			<p>The number of methods of Moore FSM's hardware optimization is known: minimization of the amount of states (state reduction) 
-			and their specific encoding (state assignment), using features of target basis and algorithm of functioning, multilevel 
-			logic circuit's implementation. Mentioned methods are quite effective, but for getting the most economic FSM's implementation 
-			they have to be used jointly.</p>
-			
-			<p>Master's work is dedicated to the actual scientific task of development a unified approach to the synthesis of Moore FSM, 
-			which is directing on hardware amount reduction in resultant device and is including algorithmic, combinatory and circuitry 
-			optimizing techniques. FPGAs by Xilinx, which combine functionality, programmability and availability to consumers, 
-			are used as the target basis. CAD Xilinx ISE, Verilog HDL and Java SE are applied as tools of the research.</p>
-			
-			<a name=p2></a>
-			<h2>2. Goal and tasks of the research</h2>
-			
-			<p>Development of an approach to the unification of synthesis Moore FSM, directing on hardware amount reduction in FPGA is the goal of research.</p>
-			<p>Main tasks of the research:</p>
-			<ol>
-				<li>Analysis methods of minimization amount of states in completely and incompletely specified Moore FSM.
-				<li>Estimation ways of hardware amount reduction with the help of encoding states of Moore FSM.
-				<li>Search and detection characteristics of existing construction methods of logic circuits of Moore FSM and estimation possibilities of their use on FPGA.
-				<li>Association of functionally different optimization directions of Moore FSM hardware amount into the unified approach to synthesis and formation recommendations for it's use.
-				<li>Design of alternative variants of basic stages of unified Moore FSM synthesis process and estimate of it's efficiency.
-			</ol>
-			
-			<p><span class=itl>Research object</span>: Moore FSM synthesis.</p>
-			<p><span class=itl>Research subject</span>: association of hardware amount reduction methods at Moore FSM implementation on FPGA.</p>
-			
-			<a name=p3></a>
-			<h2>3. An approach to the unification of synthesis of Moore FSM on FPGA</h2>
-			
-			<p>An approach to the unification of synthesis of Moore FSM on FPGA is offered in article [<a href="#ref1">1</a>]. It joints several possibilities of
-			optimization and is directed on FPGA (fig. 1). Entity of an approach consists in sequential application of algorithmic, combinatory
-			and circuitry stages and using FPGA-oriented tools: CAD and HDLs.</p>
-			
-			<div class=img>
-				<img src="images/unification_process_e.png" width=682 height=589 alt="An approach to the unification of synthesis of Moore FSM">
-				<p class=imgcaption>Figure 1 пїЅ An approach to the unification of synthesis of Moore FSM</p>
-			</div>
-			
-			<p>On the first step of algorithmic stage of synthesis, arbitrary Moore FSM specification is led to a uniform type пїЅ state transition
-			table. Necessity of leading to a uniform type is caused by possibility of specification Moore FSM with the help of different
-			representation forms, such as: graph schemes of algorithm, state diagrams, ASM-diagrams (ASM пїЅ Algorithmic State Machine)
-			[<a href="#ref2">2</a>-<a href="#ref4">4</a>]. Second step of algorithmic stage consists of minimization of the state transition table. Algorithms of Brzozowski,
-			ARNES, SMAS, CHESMIN, SLIM, HSM2, STAMINA, OPTIMIST, BICA, ISM can be used for this [<a href="#ref3">3</a>, <a href="#ref5">5</a>-<a href="#ref16">16</a>].</p>
+				<h2>Реферат по теме выпускной работы</h2>
+				
+				<h2>Содержание</h2>
+	
+				<ul class=content>
+					<li class=ct1><a href="#p0">Введение</a>
 						
-			<p>Combinatory stage is directed on effective encoding of minimized transition table's states and, also, on receiving of hardware-minimum
-			functions of the next state and, at necessity, of output functions of FSM. Considerable influence of states encoding method on
-			parameters of resultant logical circuit caused development of various approaches, directed on decreasing of power expenses,
-			high-speed performance, minimization of hardware amount. The last one of these approaches can be used on combinatory stage of
-			synthesis with the help of application, adaptation and modification of MUSTANG, MUSE, FEL-Code, JEDI, NOVA, Two-Hot Encoding,
-			DISA, one-hot  and positional-binary states encoding algorithms [<a href="#ref17">17</a>-<a href="#ref37">37</a>].</p>
-			
-			<p>Circuitry stage of synthesis process assumes using Moore FSM logical circuit's construction methods, directing on reduction of
-			hardware amount of target chip. Trivial and multilevel implementations, structures with transformation of objects codes, circuits
-			on counters can be carried to these methods [<a href="#ref37">37</a>]. Modern digital design is oriented on using HDLs (basically, VHDL and Verilog),
-			because of what the second step of circuitry stage is development of HDL program, which describes Moore FSM and is suitable for
-			processing of appropriate CAD and immersion into the chip.</p>
-			
-			<p>The described unified synthesis process can be successfully implemented automatically and assume only user's administrative functions:
-			describing of Moore FSM and choosing algorithms and structures, which should be used. Moreover, presented approach can be applied
-			to the number of other modern basis (CPLD, ASIC) and define the general direction of optimizing works at synthesis of logic
-			sequential circuits.</p>
-			
-			<p>Five Verilog-programs, describing given Moore FSM [<a href="#ref38">38</a>] (fig. 2) in various ways, were designed for an estimation of unified synthesis
-			process application to the exact example:</p>
-			
-			<div class=img>
-				<img src="images/animation.gif" width=594 height=420 alt="State diagram of Moore FSM">
-				<p class=imgcaption>
-					Figure 2 пїЅ State diagram of Moore FSM<br>(animation: 10 frames, 5 cycles of repeating, 160 kilobytes)<br>
-					(<i>x<sub>i</sub></i> пїЅ input signals, <i>y<sub>i</sub></i> пїЅ bites of state code, <i>z<sub>i</sub></i> пїЅ output signals)
-				</p>
-			</div>
-			
-			<ol>
-				<li>Implementation of not minimized Moore FSM with the help of XST (Xilinx Synthesis Technology) analyzer [<a href="#ref39">39</a>] (experiment 1).
-				<li>Implementation of minimized Moore FSM with the help of XST (Xilinx Synthesis Technology) analyzer (experiment 2).
-				<li>Implementation of minimized Moore FSM on twoпїЅlevel circuit [<a href="#ref40">40</a>] with positional-binary states encoding. Use of ROM with
-				    asynchronous reading [<a href="#ref39">39</a>] (experiment 3).
-				<li>Implementation of minimized Moore FSM on twoпїЅlevel circuit with positional-binary states encoding. Use of ROM with
-				    synchronous reading [<a href="#ref39">39</a>] and an additional signal of synchronization (experiment 4).
-				<li>Implementation of minimized Moore FSM on twoпїЅlevel circuit with positional-binary states encoding. Use of ROM with
-				    synchronous reading and back front of the main signal of synchronization (experiment 5).
-			</ol>
-			
-			<p>All researches were held with the help of CAD Xilinx ISE 13.1 for the family of FPGA Xilinx Spartan-3, namely for the chip XC3S200.
-			Results for cumulative hardware amount for five variants of implementation are graphically shown on fig. 3.</p>
-			
-			<div class=img>
-				<img src="images/synthesis_results_e.png" width=545 height=368 alt="Results of experiments">
-				<p class=imgcaption>Figure 3 пїЅ Results of experiments</p>
-			</div>
-			
-			<p>If the goal of optimization is amount of LUT-cells, the best result has been received at use of twoпїЅlevel implementation of minimized
-			Moore FSM with synchronous ROM and two signals of synchronization (experiment 4). In comparison with experiment 1, number of slices
-			has decreased in 3 times, number of flip-flops пїЅ in 1,5 times, number of LUT-cells пїЅ in 2,5 times. However in this case has increased
-			the total of circuit's outputs, number of synchronization signals and one RAM (Random Access Memory) module has been involved.</p>	
-			      
-			<a name=p4></a>
-			<h2>Conclusion</h2>
-			<p>Qualitative synthesis of digital systems, and Moore automata in particular, is one of the areas of logic design, 
-			and is not only theoretical research but also of practical interest. Development of optimal digital devices opens the way for 
-			more efficient use of capacity basis the implementation of <q>compaction</q> of projects, reduce material costs.</p>
-			
-			<p>Master's work is devoted to actual scientific problem of combining the basic methods of minimizing the instrumental Moore automata. In the trials carried out:</p>
-			<ol>
-				<li>The structure of a unified process for the synthesis of Moore automata and defines the functions of its components.
-				<li>Based on analysis of the literature highlights the main algorithms that can be used in the proposed approach to the unification of the synthesis of Moore automata.
-				<li>A number of experiments on the use of a unified process for the synthesis of Moore automata, analyzed the results.
-				<li>The possibilities of integrated automation of the developed approach to the unification of the synthesis of Moore automata are estimated requirements for the software by searching for functionally similar software synthesis of sequential logic circuits.
-			</ol>
-
-			<p>Further studies focused on the following aspects:</p>
-			<ol>
-				<li>Qualitative improvement of the proposed approach to the unification of the synthesis of Moore automata, its complement and expand.
-				<li>Delimitation of the effectiveness of different variants of the basic stages of a unified process for the synthesis of Moore automata.
-				<li>Adaptation of known methods of constructing the logic of Moore automata to the base FPGA.
-				<li>Develop cross-platform functionality and computer-aided design of Moore automata (CAD) software that implements the proposed unified process synthesis.
-			</ol>
-
-			<p>This master's work is not completed yet. Final completion: December 2011. 
-			The full text of the work and materials on the topic can be obtained from the author or his head after this date.</p>
-			
-			<a name=ref></a>
-			<h2>References</h2>
-			<ol>
-				<li><a name="ref1"></a>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ FPGA / пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ &laquo;пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ&raquo;. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 2011. пїЅ пїЅпїЅпїЅ 2. пїЅ пїЅ. 45-48.
-				<li><a name="ref2"></a>Mano M. Digital design / M. Mano. пїЅ Prentice Hall, 2003. пїЅ 516 pp.
-				<li><a name="ref3"></a>Nelson V. Digital logic circuit analysis and design / V. Nelson, H. Nagle, J. Irwin, B. Carroll. пїЅ Prentice Hall, 1995. пїЅ 842 pp.
-				<li><a name="ref4"></a>Barkalov A.A. Synthesis of operational and control automata / A.A. Barkalov, L.A. Titarenko. пїЅ Donetsk: DonNTU, TechPark DonNTU UNITECH, 2009. пїЅ 256 pp.
-				<li><a name="ref5"></a>Avedillo M.J. New approach to the state reduction in incompletely specified sequential machines / M.J. Avedillo, J.M. Quintana, J.L. Huertas // Proceedings of IEEE International Symposium on Circuits and Systems. пїЅ New Orleans, 1990. пїЅ pp. 440-443.
-				<li><a name="ref6"></a>Avedillo M.J. SMAS: a program for the concurrent state reduction and state assignment of finite state machines / M.J. Avedillo, J.M. Quintana, J.L. Huertas // Proceedings of IEEE International Symposium on Circuits and Systems. пїЅ 1991. пїЅ vol. 3. пїЅ pp. 1781-1784.
-				<li><a name="ref7"></a>Champarnaud J.-M. Split and minimizing: Brzozowski's algorithm / J.-M. Champarnaud, A. Khorsi, T. Paranthoen // Prague Stringology Conference. пїЅ Prague, 2002. пїЅ pp. 96-104.
-				<li><a name="ref8"></a>Goren S. CHESMIN: a heuristic for state reduction in incompletely specified finite state machines / S. Goren, F. Ferguson // Proceedings of the Conference on Design, Automation and Test in Europe. пїЅ 2002. пїЅ pp. 248-254.
-				<li><a name="ref9"></a>Higuchi H. A fast state reduction algorithm for incompletely specified finite state machines / H. Higuchi, Y. Matsunaga // 33rd Annual Conference of Design Automation. пїЅ Las Vegas, 1996. пїЅ pp. 463-466.
-				<li><a name="ref10"></a>Hu H. HSM2: a new heuristic state minimization algorithm for finite state machine / H. Hu, H.-X. Xue, J.-N. Bian // Journal of Computer Science and Technology. пїЅ 2004. пїЅ пїЅ 19 (5). пїЅ pp. 729-733.
-				<li><a name="ref11"></a>Rho J.-K. Exact and heuristic algorithms for the minimization of incompletely specified state machines / J.-K. Rho, G. Hachtel, F. Somenzi, R. Jacoby // IEEE Transactions on Computer-Aided Design. пїЅ 1994. пїЅ vol. 13. пїЅ pp. 167-177.
-				<li><a name="ref12"></a>Xu Y. Describing an n log n algorithm for minimizing states in deterministic finite automaton [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ]. пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: <a href="http://www.cs.sun.ac.za/rw711/documentation/hopcroft2.pdf">http://www.cs.sun.ac.za...</a>.
-				<li><a name="ref13"></a>Fuhrer R.M. OPTIMIST: state minimization for optimal 2-level logic implementation / R.M. Fuhrer, S.M. Nowick // Proceedings of International Conference of Computer-Aided Design. пїЅ 1997. пїЅ pp. 308-315.
-				<li><a name="ref14"></a>Pena J.M. A new algorithm for exact reduction of incompletely specified finite state machines / J.M. Pena, A.L. Oliveira // IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. пїЅ 1999. пїЅ vol. 18 (11). пїЅ pp. 1619-1632.
-				<li><a name="ref15"></a>Kam T. A fully implicit algorithm for exact state minimization / T. Kam, T. Villa, R. Brayton, A. Sangiovanni-Vincentelli // Proceedings of the Design Automation Conference. пїЅ 1994. пїЅ pp. 684-690.
-				<li><a name="ref16"></a>Almeida M. On the performance of automata minimization algorithms / M. Almeida, N. Moreira, R. Reis // Technical Report Series: DCC-2007-03. пїЅ 2007. пїЅ 12 pp.
-				<li><a name="ref17"></a>Slusarczyk A. State assignment techniques пїЅ short review [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ]. пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: <a href="http://web.cecs.pdx.edu/~mperkows/nov17/051.slusarczyk-state-assignment-review.pdf">http://web.cecs.pdx.edu...</a>.
-				<li><a name="ref18"></a>De Micheli G. KISS: a program for optimal state assignment of finite state machines / G. De Micheli, R. Brayton, A. Sangiovanni-Vincentelli // Proceedings of IEEE International Conference of Computer-Aided Design. пїЅ Santa Clara, 1984. пїЅ pp. 209-211.
-				<li><a name="ref19"></a>De Micheli G. Optimal state assignment for finite state machines / G. De Micheli, R. Brayton, A. Sangiovanni-Vincentelli // IEEE Transactions on Computer-Aided Design. пїЅ 1985. пїЅ pp. 269-285.
-				<li><a name="ref20"></a>De Micheli G. Optimal encoding of control logic / G. De Micheli // Proceedings of the International Conference on Circuits and Computer Design. пїЅ 1984. пїЅ pp. 16-22.
-				<li><a name="ref21"></a>El-Maleh A. Finite state machine state assignment for area and power minimization / A. El-Maleh, S.M. Sait, F.N. Khan // Proceedings of IEEE International Symposium on Circuits and Systems. пїЅ 2006. пїЅ pp. 5303-5306.
-				<li><a name="ref22"></a>Devadas S. MUSTANG: state assignment of finite state machines targeting multilevel logic implementations / S. Devadas, H.-K. Ma, A.R. Newton, A. Sangiovanni-Vincentelli // IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. пїЅ 1998. пїЅ vol. 7 (12). пїЅ pp. 1290-1300.
-				<li><a name="ref23"></a>Du X. MUSE: a multilevel symbolic encoding algorithm for state assignment / X. Du, G. Hachtel, B. Lin, A.R. Newton // IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. пїЅ 1991. пїЅ vol. 10 (1). пїЅ pp. 28-38.
-				<li><a name="ref24"></a>Kubatova H. FEL-Code: FSM internal state encoding method / H. Kubatova, M. Becvar // Proceedings of 5th International Workshop on Boolean Problems. пїЅ Freiberg, 2002. пїЅ pp. 109-114.
-				<li><a name="ref25"></a>Lin B. Synthesis of multiple level logic from symbolic high-level description languages / B. Lin, A.R. Newton // Proceedings of the International Conference on VLSI. пїЅ Munich, 1989. пїЅ pp. 187-196.
-				<li><a name="ref26"></a>Villa T. NOVA: state assignment of finite-state machines for optimal two-level logic implementation / T. Villa, A. Sangiovanni-Vincentelli // IEEE Transactions on Computer-Aided Design. пїЅ 1990. пїЅ pp. 905-924.
-				<li><a name="ref27"></a>Gupta, B.N.V.M. A state assignment scheme targeting performance and area / B.N.V.M. Gupta, H. Narayanan, M.P. Desai // Proceedings of 12th International Conference on VLSI Design. пїЅ 1999. пїЅ pp. 378-383.
-				<li><a name="ref28"></a>Martinez M. A dynamic model for the state assignment problem / M. Martinez, M.J. Avedillo, J.M. Quintana, J.L. Huertas // Proceedings of Design, Automation and Test in Europe. пїЅ Paris, 1998. пїЅ pp. 835-839.
-				<li><a name="ref29"></a>Golson S. One-hot state machine design for FPGAs / S. Golson // Proceedings of the 3rd PLD Design Conference. пїЅ Santa Clara, 1993. пїЅ pp. 1-6.
-				<li><a name="ref30"></a>Almaini A. State assignment of finite state machines using a genetic algorithm / A. Almaini, J. Miller, P. Thomson, S. Billina // IEEE Proceedings on Computer and Digital Techniques. пїЅ 1995. пїЅ pp. 279-286.
-				<li><a name="ref31"></a>Amaral J. Designing genetic algorithms for the state assignment problem / J. Amaral, K. Turner, J. Chosh // IEEE Transactions on Systems, Man, and Cybernetics. пїЅ 1995. пїЅ vol. 25. пїЅ pp. 659-694.
-				<li><a name="ref32"></a>Chyzy M. Evolutionary algorithm for state assignment of finite state machines / M. Chyzy, W. Kosinski // Artificial Intelligence Methods. пїЅ Gliwice, 2003. пїЅ pp. 51-52.
-				<li><a name="ref33"></a>Nedjah N. Evolutionary synthesis of synchronous finite state machines / N. Nedjah, L.M. Mourelle // Evolvable Machines. пїЅ Berlin, 2004. пїЅ pp. 103-128.
-				<li><a name="ref34"></a>Chattopadhyay S. Area conscious state assignment with flip-flop and output polarity selection for finite state machine synthesis пїЅ a genetic algorithm approach / S. Chattopadhyay // The Computer Journal. пїЅ 2005. пїЅ vol. 48 (4). пїЅ pp. 443-450.
-				<li><a name="ref35"></a>Hasteer G. Parallel algorithms for state assignment of finite state machines. Master's thesis. пїЅ University of Illinois, 1996. пїЅ 58 pp.
-				<li><a name="ref36"></a>Bader D.A. A parallel state assignment algorithm for finite state machines / D.A. Bader, K. Madduri // Proceedings of IEEE Conference on High-Performance Computing. пїЅ Bangalore, 2004. пїЅ pp. 297-308.
-				<li><a name="ref37"></a>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ / пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, 2009. пїЅ 336 пїЅ.
-				<li><a name="ref38"></a>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ / пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅ.: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ <q>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</q>, 2004. пїЅ 320 пїЅ.
-				<li><a name="ref39"></a>XST User Guide for Virtex-4, Virtex-5, Spartan-3, and Newer CPLD Devices [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ]. пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: <a href="http://www.xilinx.com/support/documentation/sw_manuals/xilinx13_1/xst.pdf">http://www.xilinx.com...</a>.
-				<li><a name="ref40"></a>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ / пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅ, 2002. пїЅ 262 пїЅ.
-			</ol>
+					<li class=ct1><a href="#p1">1. Актуальность темы</a>
+					<li class=ct1><a href="#p2">2. Цель и задачи исследования, планируемые результаты</a>
+					<li class=ct1><a href="#p3">3. Обзор существующих методов измерения высоких температур</a>
+					<li class=ct2><a href="#p31">3.1 Термопара</a>
+					<li class=ct2><a href="#p32">3.2 Пирометр</a>
+					<li class=ct1><a href="#p4">4. Упрощённая структурная схема устройства</a>
+					<li class=ct1><a href="#p5">5. Факторы, оказывающие влияние на точность измерений, способы их устранения</a>			
+						
+					<li class=ct1><a href="#p6">Выводы</a>
+					
+					<li class=ct1><a href="#ref">Список источников</a>
+				</ul>
+				
+				<a name=p0></a>
+				<h2>Введение</h2>
+				
+				<p>В настоящее время во многих производственных отраслях, включая чёрную металлургию и сталелитейную промышленность, 
+				наблюдается тенденция к более широкому применению бесконтактных средств измерения температуры. 
+				Это обусловлено преимуществами пирометров по сравнению с контактными средствами измерения.</p>
+				
+				<p> Например, измерение температуры стали в диапазоне (1300°С-1800°C), а именно в таком диапазоне температур происходит её плавление, поможет избежать простоя расплава, 
+					необходимости дополнительного нагрева для перехода к следующему этапу производства. Процесс плавки стали сопровождается не только довольно высокими температурами, 
+					но и сложными химико-физическими процессами взаимодействия расплава стали с добавленными примесями, а также флюсом, шлаком, печными газами, 
+					образующимися во время нагревания стали и футеровкой печи. Благодаря поддержанию нужной температуры сталь не успеет остыть и &ldquo;жидкий&rdquo;, 
+					расплавленный состав не успевает превратиться в &ldquo;вязкую&rdquo; массу, которую, опять же, нужно будет нагревать снова до нужного агрегатного состояния для возможности отливки. 
+					От этого напрямую зависит соответствия стандартам готовой продукции, конкурентоспособность на рынке и финансовый результат компании. </p>
 		
-		</div> <!-- maintext -->
+				<p>Для дополнительного нагрева стали требуется дополнительная энергия, а количество необходимой энергии достаточно велико, 
+				что может привести к затратам предприятия на дополнительный нагрев состава металла. Дополнительный нагрев требуется лишь в том случае, 
+				если есть необходимость добавления каких-либо примесей, либо их удаления, 
+				а также легирования стали – придания стали особых свойств (прочности, жаростойкости, коррозийной стойкости и т.д.). 
+				Операция легирования – это сведение в стальной расплав элементов, таких как хром, никель и др., порядок их введения определяется их физико-химическими свойствами и &ldquo;сродством к кислороду&rdquo;. Все эти процессы необходимо контролировать и знать, 
+				где недопустимо превышение температуры, или наоборот – когда расплав стали нужно поддерживать ниже &ldquo;средней&rdquo; температуры плавления (около 1300°С-1500°С) для правильного введения различных элементов в расплавленный состав. 
+				Для создания определенности в температурном режиме и для получения устойчивых технологических результатов необходимо выдерживать в каждом случае определенную степень перегрева металла. Поэтому измерение температуры жидкой стали имеет главный смысл как определение степени ее перегрева. 
+				Следовательно, погрешность измерения температуры не должна быть большей по сравнению со степенью перегрева металла. Протекание в жидком металле реакций, его жидкотекучесть и далее – качество продуктов производства зависят не столько от абсолютного значения температуры, 
+				при которой ведется процесс, сколько от степени перегрева металла по отношению к его температуре начала затвердевания.</p>
+	
+				<p>Большинство сплавов плавятся не при определённой температуре, а в температурном интервале. То есть первая порция жидкого расплава появляется при достижении какой-то температуры, но, 
+				если больше температуру не увеличивать,	количество жидкости останется прежним независимо от продолжительности выдержки. 
+				Научно выражаясь, жидкая и твёрдая фаза будут находиться в равновесии. 
+				При увеличении температуры количество жидкости увеличивается, и при достижении её определённого значения весь твёрдый металл переходит в жидкость. 
+				Этот интервал определяется по диаграммам состояния для каждой металлической системы и заключён между так называемыми линиями солидуса и ликвидуса. 
+				Исключение составляют т. н. эвтектические сплавы, которые не имеют такого интервала и плавятся при одной температуре, сразу.
+				Для сталей различной степени легированности интервал составляет 
+				(1300°С-1800°С). Конечно, разные легирующие добавки влияют на интервал плавления и кристаллизации по-своему.</p>
+	
+				<p>Разработка математической модели нестационарного теплопереноса через многослойную футеровку проведена в работе Н.В.&nbsp;Михайловского и С.В.&nbsp;Бейцун (научно-технический журнал &laquo;Системные технологии&raquo;, Украина) [<a href="#ref1">1</a>]
+				</p>
+				
+				<a name=p1></a>
+				<h2>1. Актуальность темы</h2>
+				
+				<p>На данный момент наиболее распространёнными в сфере тяжёлой промышленности являются высокотемпературные инфракрасные пирометры, 
+					так как в силу разнообразия существующих измерителей температуры, в производстве возникают сложности и задачи по измерению и проведению контроля в  заданных интервалах температур, 
+					такие задачи, в основном, решаются бесконтактными инфракрасными пирометрическими устройствами. 
+					Такие пирометры являются профессиональными диагностическими инструментами для измерения температуры практически на любых расстояниях.</p>
+	
+				<p> Номенклатура отечественных серийно выпускаемых пирометров для измерения температуры расплава стали очень ограничена, 
+					и они не обеспечивают решение многих технологических задач сталелитейного производства, 
+					поэтому разработка и внедрение новых приборов для контроля технологических процессов при производстве стали является актуальной задачей.</p>
+				
+				<p>Одной из наиболее, сложных проблем в пирометрии частично прозрачных материалов является устранение погрешностей, 
+					возникающих в результате одновременного воздействия на прибор большого количества различных по физической природе помех и факторов. 
+					Применение традиционных приемов исключения их влияния приводит к значительному усложнению конструкции прибора, его обслуживания, 
+					снижает эксплуатационные свойства и надежность.</p>
+	
+				<p>В связи с этим возникла необходимость в исследовании и разработке новых методов бесконтактного измерения температуры, а также усовершенствованию, модернизации уже готовых технологических решений
+					с целью повышения точности измерений. Наиболее перспективным направлением решения указанной проблемы является применение структурно-алгоритмических методов и создание систем, 
+					функционирующих в режиме автоматической калибровки. Бесконтактное устройство измерения температуры должно учитывать ряд факторов, влиящих на конечный результат процесса измерения.</p>
+				
+				<a name='p2'></a>
+				<h2>2. Цель и задачи исследования, планируемые результаты</h2>
+				
+				<p> Целью исследования является анализ, последущие усовершенствование и унификация методов бесконтактного измерения температуры, разработка математической модели измерительных процессов с помощью бесконтактного инфракрасного пирометра
+					а также внедрение решений по технической модернизации бесконтактных инфракрасных устройств контроля температуры для получения наиболее точных результатов при проведении измерительных работ.</p>
+				
+				<p>Основные задачи исследования:</p>
+				<ol>
+					<li>Анализ методов измерения высоких температур.
+					<li>Анализ объектов измерения и среды, в которой проводятся измерения.
+					<li>Поиск и выявление факторов, влиящих на точность результатов измерений.
+					<li>Разработка математических моделей измерительных процессов, выявление значимых параметров, расчёт и моделирование процессов, протекаемых при измерении высоких температур бесконтактными инфракрасными устройствами.
+					<li>Модернизация структурной схемы, усовершенствование технических решений и конструкции измерительного устройства, формирование рекомендаций по его калибровке и использованию с целью учёта, минимизации и устраненения погрешности от влиящих на результат измерения факторов.
+				</ol>
+				
+				<p><span class=itl>Объект исследования</span>: метрологические измерения высоких температур в металлургии бесконтактным способом, основанным на приёме и обработке инфракрасного излучения от нагретого объекта.</p>
+				<p><span class=itl>Предмет исследования</span>: объединение методов устранения и минимизации факторов, влиящих на точность измерений температур в металлургии.</p>
+				
+				<p>В рамках магистерской работы планируется получение актуальных научных результатов по следующим направлениям:</p>
+				<ol>
+					<li>Разработка подхода к измерениям высоких температур в данной сфере деятельности.
+					<li>Поиск и устранение, компенсация или минимизация факторов, влиящих на результат измерения.
+					<li>Модификация известных методов и технических решений, усовершенствование компонентов, на базе которых основывается бесконтактный инфракрасный прибор для измерений температуры.
+				</ol>
+						
+				<a name=p3></a>
+				<h2>3. Обзор существующих методов измерения высоких температур</h2>
+				
+				<p> Измерение высоких температур в сфере чёрной металлургии и сталелитейной промышленности является необходимым средством контроля качества продукции предприятий,
+					от эффективности измерительных приспособлений будет зависеть сам технологический и производственный процесс, что непосредственно повлияет на выпуск продукции. 
+					Правильный выбор средств измерений поможет избежать простоя в работе и сократит финансовые расходы на различные процессы, вроде дополнительного нагрева расплава металла.</p>
+				
+				<a name=p31></a>
+				<h3>3.1 Термопара</h3>
+				
+				<p> Термопары [<a href="#ref2">2</a>-<a href="#ref3">3</a>] широко используются в промышленности в качестве датчиков температуры и измерительных устройств. Термопара представляет собой два провода из различных металлов, 
+					соединенных на одном конце, называемом измерительным или «горячим» спаем. 
+					Другой конец, где провода не спаяны, присоединяются к проводникам, идущим к измерительной схеме, и называется холодным спаем. 
+					Существует огромное множество видов термопар, отличающиеся материалами, типами и конфигурациями[<a href="#ref4">4</a>]. 
+					Эти проводники чаще всего изготавливаются из меди. К основным преимуществам термопар можно отнести: </p>
+					<ol style="list-style-type: disc;">
+							<li>высокую точность измерений;
+							<li>достаточно широкий температурный диапазон;
+							<li>высокую надёжность;
+							<li>простоту в обслуживании;
+							<li>относительную дешевизну.
+						</ol>
+	
+						<p> Термопары работают на так называемом <q>эффекте Зеебека</q>, который открыл немецкий учёный Т.&nbsp;Зеебек. Эффект Зеебека состоит в следующем: если соединить два проводника (термоэлектрода) из разнородных металлов или сплавов таким образом, 
+							чтобы они образовали замкнутую электрическую цепь, и затем поддерживать места контактов (спаи) при различной температуре, то в цепи будет протекать постоянный ток. 
+							Цепь, которая состоит только из двух различных проводников (термоэлектродов), называется термоэлементом или термопарой. </p>
+	
+							<p>Электродвижущая сила, вызывающая ток в цепи, называется термо-ЭДС Зеебека и в первом приближении зависит только от материала термоэлектродов и разности температур спаев.
+									Термоэлектрод, по которому ток идет от горячего спая к холодному, договорились считать положительным, от холодного к горячему – отрицательным. 
+									При обозначении термопары, например ТХА (термопара хромель-алюмель), на первом месте в названии указывается материал положительного электрода, на втором – отрицательного
+									Таким образом, зная температуру одного спая (обычно ее поддерживают постоянной, например, равной 0 °С) и измеряя ток или напряжение в цепи, 
+									можно однозначно определить неизвестную температуру другого спая.</p>
+	
+				<p>Для защиты погружаемых в металл термопар трудно подобрать достаточно стойкий огнеупорный материал. Молибден-вольфрамовая термопара применяется в оболочке из графита. 
+					В вольфрам-графитовой и карборунд-графитовой термопарах графитовый термоэлектрод устраивают в виде наружной трубки, предохраняющей помещающийся в ней другой термоэлектрод. </p>
+	
+					<p>Таким образом осуществляется сравнительно стойкий термоприемник, который может находиться в среде жидкого металла более или менее длительное время и 
+						воспринимать непрерывные изменения его температуры. Платиновая термопара успешно применяется в оболочке из кварцевого стекла, однако только при кратковременном погружении. 
+						В данном случае возможно лишь практически мгновенное и периодически повторяющееся измерение. Именно так осуществляется способ малоинерционной термопары (или способ быстрого погружения), 
+						имеющий в настоящее время наиболее важное значение по сравнению с другими существующими способами измерения температуры жидкого металла. </p>
+	
+	
+				<a name=p32></a>
+				<h3>3.2 Пирометр</h3>
+				
+				<p>Пирометр (инфракрасный термометр) – прибор для бесконтактного измерения температуры. 
+					В зависимости от области применения, инфракрасные (ИК) термометры бывают двух типов: стационарные и переносные (портативные). 
+					Пирометры относятся к группе приборов неразрушающего контроля, что позволяет проводить измерение температур без непосредственного контакта с измеряемой поверхностью, как в случае с <q>обычными</q>, контактными, термометрами. 
+					Их использование гарантирует безопасность при диагностике дефектов и мониторинге различных процессов.</p>
+				
+				<p>Пирометры, как и термопары имеют ряд преимуществ и недостатков[<a href="#ref5">5</a>]. Среди преимуществ важно отметить следующие:</p>
+	
+				<ol style="list-style-type: disc;">
+						<li>высокое быстродействие;
+						<li>возможность измерения температуры движущихся объектов или объектов, находящихся под высоковольтным потенциалом;
+						<li>отсутствие искажения температурного поля объекта контроля;
+						<li>возможность длительного измерения высоких температур, при которых применение контактных средств измерения либо невозможно, либо время их работы очень невелико;
+						<li>возможность работы в условиях повышенной радиации и температуры окружающей среды (до 250°С) при разнесении приемной головки и электроники пирометра с помощью оптоволоконного кабеля.
+					</ol>
+	
+					<p>На одно предприятие достаточно приобрести несколько таких приборов, они удобны, мобильны, имеют низкую погрешность при правильной настройке и ими можно измерять множество производственных процессов одновременно. 
+						Обычные пирометры работают в температурных диапазонах (50°C-1200°C) и их погрешность в таких пределах измерения достаточно низка благодаря предустановленным параметрам и возможностью настройки перед использованием. 
+						Более дорогие виды пирометров имеют возможность более точной и гибкой настройки параметров для выполнения поставленных задач, они же и рассчитаны на более высокие температуры – от (500°C-1000°C) до (1500°C-2000oС) и больше, в них очень низкая длина волны, по сравнению с более дешёвыми аналогами, 
+						что идеально подходит для измерения различных расплавов.</p>
+	
+						<p>В основу работы[<a href="#ref6">6</a>] электронного устройства бесконтактного измерения температуры положен принцип инфракрасного излучения, создаваемого объектом измерения, принцип представлен на рисунке 1.
+						Любой инфракрасный пирометр имеет такую характеристику как оптическое разрешение (D:S).</p>
+	
+						<div class=img>
+								<img src="images/pyro_work_ru.jpg" width=520 height=383 alt="принцип работы пирометра">
+								<p class=imgcaption>Рисунок 1 – Принцип работы бесконтактного инфракрасного пирометра</p>
+							</div>
+						<p>
+						Он определяется как отношение расстояния между пирометром и измеряемой поверхностью (D) к диаметру (S) измеряемой области на этой поверхности. 
+						В этом случае пирометр схож с обычным бытовым фонариком. Если включить фонарик и направить луч на стену, то можно увидеть световое пятно. 
+						Если подносить фонарик к стене - диаметр пятна будет уменьшаться и наоборот, при удалении увеличиваться. 
+						Так же и у пирометра — чем дальше он находится от поверхности, тем с большего диаметра области он будет принимать тепловые волны. 
+						При этом если в этой области находится не только объект измерения, но и посторонний, то пирометр усредняет результат и измеренная температура будет не верной. 
+						Для увеличения расстояния (D) и уменьшения диаметра (S) в пирометре применяют оптическую призму. 
+						Чем больше увеличение призмы, тем больше расстояние, с которого можно измерять мелкие объекты. Стоит отметить что загрязненная призма может внести ошибку в измерения. 
+						Необходимо периодически производить ее чистку. Для приблизительной оценки диаметра пятна многие пирометры оснащены лазерными целеуказателями.</p>
+				
+				<p>Проектирование бесконтактных устройств для измерения температуры подробно освещено в работах А.А.&nbsp;Букарева, В.А.&nbsp;Лесного, А.П.&nbsp;Кислицына (НТУУ &laquo;Национальный аэрокосмический университет им. Н.&nbsp;Е. Жуковского <q>ХАИ</q>, Украина&raquo;) [<a href="#ref7">7</a>], а в работе Б.И.&nbsp;Скорика и А.В.&nbsp;Гейко (&laquo;Днепропетровский национальный университет&raquo;) разработаны рекомендации по выбору пирометра [<a href="#ref8">8</a>].
+				Особенности работы с оптическими бесконтактными термометрами описаны в работе Ю.Н.Биличенко (научно-технический журнал &laquo;Электротехнические и компьютерные системы&raquo;, Украина) [<a href="#ref9">9</a>].</p>
+				
+							
+				<a name=p4></a>
+				<h2>4. Упрощённая структурная схема устройства</h2>
+							
+				<p>Во время выполнения бакаларвской работы была разработана упрощённая структурная схема проектируемого устройства, представленная на рисунке 2. Схема дорабатывалась в процессе выполнения магистерской работы.</p>
+				
+				<div class=img>
+						<img src="images/scheme_ru.jpg" width=800 height=223 alt="Упрощённая структурная схема устройства">
+						<p class=imgcaption>Рисунок 2 – Упрощённая структурная схема инфракрасного устройства бесконтактного измерения температуры</p>
+					</div>
+	
+					<p>На рисунке 2 представлены:</p>
+	
+					<ol>
+							<li>ОИ &ndash; объект измерения.
+							<li>ОС &ndash; оптическая система, представлена линзой на структурной схеме.
+							<li>ФП &ndash; фотоприёмник.
+							<li>ФУ &ndash; фотоусилитель.
+							<li>ЭТ &ndash; элемент термостабилизации (элемент Пельтье).
+							<li>У &ndash; усилитель.
+							<li>ФНЧ &ndash; фильтр низких частот.
+							<li>АЦП &ndash; аналого-цифровой преобразователь.
+							<li>МК &ndash; микроконтроллер.
+							<li>БИ &ndash; блок индикации.
+							<li>ЦИ &ndash; цифровой интерфейс.
+							<li>БП &ndash; блок питания.
+					</ol>
+							
+					<a name=p5></a>
+					<h2>5. Факторы, оказывающие влияние на точность измерений, способы их устранения</h2>
+	
+					<p>В процессе измерения температуры инфракрасным бесконтактным пирометром возникает ряд факторов[<a href="#ref12">12</a>], которые вносят свою погрешность и влияют на точность и конечный результат измерения температуры.
+					На рисунке 3 представлен процесс измерения температуры расплава стали в ковше с учётом помех, возникающих на пути инфракрасного излучения между объектом измерения и бесконтактным измерительным устройством.
+					</p>
+					
+	
+				<div class=img>
+					<img src="images/animation_ru.gif" width=700 height=482 alt="Измерение температуры расплава стали">
+					<p class=imgcaption>
+						Рисунок 3 – Процесс измерения температуры расплава стали в ковше инфракрасным бесконтактным стационарным пирометром<br>(анимация: 5 кадров, 10 циклов повторения, 94,4 килобайт)<br>
+					</div>
+	
+					<p>Следует учитывать что от правильного выбора пирометра зависит точность и стабильность измерения температуры. Не существует универсального пирометра, который позволит решить все поставленные перед ним задачи по измерению температуры. 
+					Поверхность металла как с чистой, так и с окисленной поверхностью может быть измерена с достаточно высокой точностью с использованием инфракрасных пирометров разного типа. 
+					Тип используемого пирометра зависит от нескольких параметров. 
+					Наиболее часто и эффективно использовать пирометр, который работает на наиболее короткой из возможных длине волны, но также бывают случаи, когда необходимо остановить свои выбор на пирометр спектрального отношения. 
+					Основным из главных факторов является стабильность характеристик излучения измеряемой поверхности нагретого материала во время рабочего процесса, а также степень окисления его поверхности. 
+					Также важным фактором является наличие и характер атмосферы попадающую в зону измерения.
+					Необходимо учитывать, что пирометры спектрального отношения так и не нашли более широкого распространения соответствующего их теоретической базе. 
+					Погрешность пирометров[<a href="#ref11">11</a>] зависит от комплекса факторов: </p>
+	
+					<ol style="list-style-type: disc;">
+						<li>поверхность наблюдаемой площади объекта должна быть в зоне прямого обзора;
+						<li>пыль, туман, пар и другие предметы между тепловым датчиком и источником тепла ослабляют сигнал, как и следы загрязнения на оптике; 
+						<li>структура и состояние поверхности исследуемого тела влияют на интенсивность инфракрасного потока и показания измерителя температуры, например, 
+							окалина на расплаве металла вносит большую погрешность, 
+							т.к. её цветофизические свойства сильно отличаются от свойств поверхности расплава металла;
+						<li>длина волны инфракрасного спектра, на которой проводится замер;
+						<li>световые блики в объективе фотоприёмника в результате отражения от поверхности объекта измерения дневного света или излучения вольфрамовых ламп;
+						<li>температура объекта измерения.
+					</ol>
+	
+					<p>На данный момент были разработаны рекомендации по использованию пирометров для каждого отдельного случая[<a href="#ref11">11</a>]. 
+					Существует ряд очень важных особенностей, защитно-предохранительных мер при проектировании, изготовлении физических моделей и использовании бесконтактных пирометров, среди них: </p>
+	
+						<ol style="list-style-type: disc;">
+								<li>для снижения влияния влажности окружающей среды применить покрытие печатных плат и электронных компонентов влагостойким лаком;
+								<li>для уменьшения влияния электромагнитных полей, создаваемых работающей электроэнергетической установкой предусмотреть экранирование от электромагнитных наводок, расчет параметров экранов выполнить на этапе конструкторско-технологического проектирования; 
+								<li>для уменьшения влияния от сетевых помех, создаваемых работающей энергетической установкой, в структуре электропитания контрольно-измерительной аппаратуры предусмотреть установку защитного сетевого фильтра;
+								<li>уменьшение факторов, загрязняющих производственное пространство путём установки вытяжек для отвода газов и паров;
+								<li>своевременная чистка помещений и оборудования от влияющего фактора пыли и грязи в воздухе – между измерительным устройством и объектом измерения;
+								<li>поддержание оптимальной температуры в рабочих и производственных помещениях для уменьшения сырости и, вследствие этого, излишней влаги;
+								<li>разработка конструктивных деталей для прибора, позволяющих уменьшить влияние потери плотности потока излучения и его рассеивания, 
+									а также уменьшить влияние световых бликов, отражённых от других поверхностей при проведении измерений (блинда);
+							</ol>
+	
+				<p>Моей же задачей является разработка и усовершенствование методов, моделирование и разработка математических моделей, а также учёт влияния внешних факторов,
+					 что позволит внести коррективы в работу одного конкретного вида устройства, качественно повысив его точность. Здесь следует упомянуть о поглощении излучения в поле визирования пирометра[<a href="#ref11">11</a>].</p>
+	
+					<p>Всегда необходимо прилагать большие усилия для уменьшения влияния на измерения поглощения излучения из-за препятствий в поле визирования пирометра. 
+						Добиться этого можно в том числе и за счет оптимального расположения пирометра, наличия постоянной продувки очищенным воздухом (инертным газом) поля визирования. 
+						В случае если принятые меры не помогают необходимо:</p>
+	
+						<ol>
+								<li>При наличии в атмосфере водяного пара или двуокиси водорода - подбор оптимальной для этой атмосферы рабочей длины волны пирометра. 
+									Необходимо учитывать что при использовании двух спектрального пирометра одна из рабочит длин вол полностью поглощается водяным паром (двуокисью водорода), 
+									то полученные результаты измерения температуры будут больше чем при измерении монохроматическим пирометром с аналогичной длиной волны. 
+									Ошибка измеренной температуры будет всегда пропорциональна эффективной длине волны двух этих пирометров.
+								<li>При наличии продуктов сгорания между пирометром и измеряемым объектов (двуокись углерода при 2.7 мкм и 4.3 мкм) необходимо использовать пирометры с большей длиной волны. 
+									При наличии газа или дыма пирометр спектрального отношения измеряет  так называемую “цветовую температуру” источника излучения, при этом возникающий эффект от частичного затемнения поля видения пирометра маленькими частицами (размер которых соизмерим с используемыми в пирометре длинами волн) аналогичный тому, как вы рассматривали бы солнце сквозь туман. 
+									Температура солнца в 6000К представлялась бы темно-вишневым цветом, который соответствовал бы температуре 1000К. Аналогично можно представить измерение потока жидкой стали через завесу тумана и дыма. 
+									Ни один из пирометров не справиться с такой задачей измерения температуры, однако монохроматический пирометр всегда даст более лучший результат нежели спектральный.
+								<li>Наличие пыли, частиц и паровые капель в зоне виденья пирометра размером больше чем используемая длина волны дает противоположный результат. 
+									Их воздействие на пирометр спектрального отношения не большое и использование этого пирометра более предпочтительно. 
+									Поглощение излучения водяными каплями (видимый насыщенный пар) в значительной мере также не зависит от используемой длины волны.
+								<li>наличие воды не влияет на проницаемость излучения с короткой длиной волны, но поглощение водой излучения быстро возрастает при с ростом длины волны. 
+									Если требуется измерять температуру сквозь слой воды, то это это можно сделать только при условии достаточно горячего объекта измерения, 
+									для измерения монохроматическим пирометром который имеет длину волны не более 1 мкм.
+						</ol>
+				
+				<a name=p6></a>
+				<h2>Выводы</h2>
+				
+				<p>Был проанализирован объект измерения – расплав стали в чугунном ковше, а также особенности плавления стали, способы её литья, нагрева.
+					Рассмотрены основные методы и устройства, при помощи которых проводится контроль температуры расплава стали. 
+					Обоснована необходимость контроля температуры расплавленной стали.</p>
+	
+					<p> Инфракрасные пирометры довольно точны, надежны и имеют более длительный срок эксплуатации; 
+					диапазон измерения температур у них значительно шире и включает высокотемпературную область, где контактные средства непригодны; 
+					термочувствительный элемент и другие детали прибора не контактируют непосредственно с высокотемпературной и, зачастую, агрессивной средой. 
+					Высокое быстродействие пирометров, способность измерять температуру труднодоступных и подвижных объектов, предметов малых размеров либо пленок, 
+					не нарушая при этом температурного поля данного объекта, позволяют решать важные технологические задачи, для которых контактные средства не всегда применимы.
+					 Почти повсеместное использование пирометров для цели измерения высоких температур и контроля температуры расплава металла ведёт к необходимости учёта ряда влияющих факторов, 
+					 от которых зависит конечный результат измерений.</p>
+				
+				<p>Магистерская работа посвящена актуальной научной задаче исследования и разработки методов и средств повышения точности метрологических измерений измерений высоких температур в металлургии.
+				В рамках проведенных исследований выполнено:</p>
+				
+				<ol>
+					<li>Проанализированы факторы, влияющие на результат измерений.
+					<li>Разработана математическая модель, описывающая процесс измерения с учётом внешних влиящих факторов.
+					<li>Разработана и дополнена структурная схема стационарного измерительного устройства (инфракрасного пирометра).
+					<li>Предложены технические дополнения и дополнительные конструктивные решения для разработки физической модели бесконтактного инфракрасного устройства измерения температуры.
+					<li>Рассмотрены возможности устранения и минимизации погрешности от факторов, влияющих на процесс измерения.
+					<li>оценены требования к программному обеспечению устройства
+				</ol>
+				
+				<p>Дальнейшие исследования должны быть направлены на следующие аспекты:</p>
+				<ol>
+					<li>Качественное совершенствование предложенных способов устранения и минимизации погрешности от влиящих факторов.
+					<li>Определение границ эффективности данного средства измерения, поиск новых преимуществ работы устройства и устранение возможных недостатков.
+					<li>Разработка более качественного программного обеспечения.
+					<li>Разработка физической модели устройства.
+				</ol>
+						
+				<p>При написании данного реферата магистерская работа еще не завершена. Окончательное завершение: июнь-июль 2020 года. Полный текст работы
+				и материалы по теме могут быть получены у автора или его руководителя после указанной даты.</p>
+				
+				<a name=ref></a>
+				<h2>Список источников</h2>
+				<ol>
+					<li><a name="ref1"></a>Михайловский&nbsp;Н.В. Исследование чувствительности модели теплового состояния системы "расплав–ковш" / Н.В.&nbsp;Михайловский, С.В.&nbsp;Бейцун // Системні технології. - 2014. - Вип. 2. - С. 88-91.
+					<li><a name="ref2"></a>О термопарах: что это такое, принцип действия, подключение, применение [Электронный ресурс]. – Режим доступа: <a href="https://www.asutpp.ru/termopary.html">https://www.asutpp.ru...</a>.
+					<li><a name="ref3"></a>Термопары. Типы, характеристики, конструкции, производство [Электронный ресурс]. – Режим доступа: <a href="https://www.metotech.ru/art_termopary_4.htm">https://www.metotech.ru...</a>.
+					<li><a name="ref4"></a>Термопара. Виды, устройство, монтаж термопар [Электронный ресурс]. – Режим доступа: <a href="http://www.eti.su/articles/izmeritelnaya-tehnika/izmeritelnaya-tehnika_1518.html">http://www.eti.su...</a>.
+					<li><a name="ref5"></a>Преимущества и недостатки бесконтактного измерения температуры [Электронный ресурс]. – Режим доступа: <a href="https://lityo.com.ua/preimushchestva-i-nedostatki-beskontaktnogo-izmereniya-temperatury">https://lityo.com.ua...</a>.
+					<li><a name="ref6"></a>Как работает пирометр. Оптическое разрешение и величина области измерения [Электронный ресурс]. – Режим доступа: <a href="https://geototal.ru/articles-n-video/kak-rabotaet-pirometr-opticheskoe-razreshenie-i-velichina-oblasti-izmerenija.html">https://geototal.ru...</a>.
+					<li><a name="ref7"></a>Букарев&nbsp;А.А. Действующий макет электронного пирометра для контроля "хода температур" / А.А.&nbsp;Букарев, В.А.&nbsp;Лесной, А.П.&nbsp;Кислицын // Радіоелектронні і комп’ютерні системи. - 2013. - № 1. - С. 28–34.
+					<li><a name="ref8"></a>Скорик&nbsp;Б.И. К вопросу применения бесконтактных методов измерения температуры нагретых тел / Б.И.&nbsp;Скорик, А.В.&nbsp;Гейко // Системи обробки інформації. - 2007. - Вип. 9. - С. 129-132.
+					<li><a name="ref9"></a>Биличенко&nbsp;Ю.Н. Измерение температуры с помощью оптических пирометров / Ю. Н. Биличенко // Електротехнічні та комп’ютерні системи. - 2012. - № 6. - С. 86-88.
+					<li><a name="ref10"></a>Бесконтактное измерение температуры при эксплуатации электрооборудования [Электронный ресурс]. – Режим доступа: <a href="http://electricalschool.info/main/ekspluat/1649-beskontaktnoe-izmerenie-temperatury-pri.html">http://electricalschool.info...
+					<li><a name="ref11"></a>Рекомендации по использованию пирометров [Электронный ресурс]. – Режим доступа: <a href="https://www.rospribor.com/questions/rekomendacii-po-ispolzovaniyu-pirometrov/">https://www.rospribor.com...
+					<li><a name="ref11"></a>Факторы, влияющие на точность измерения температуры [Электронный ресурс]. – Режим доступа: <a href="https://teplovizo.ru/faktory-vliyayushhie-na-tochnost-izmereniya-temperatury.htm">https://teplovizo.ru...</a>
+				</ol>
+			
+			</div> <!-- maintext -->
 	
 	</div> <!-- middleblock -->
 
