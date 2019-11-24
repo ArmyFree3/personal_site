@@ -392,3 +392,26 @@ table.search td.cn a:hover { color: firebrick; }    /* Подсвеченная ссылка */
 .colorfix:hover   { color: #692f06; }	  /* Цвет при наведении не меняем */
 
 
+.art-img {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	display: block;
+	max-width: 700px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.art-img-title {
+	text-align: center;
+	text-indent: 0;
+	margin-bottom: 20px;
+}
+
+.sources-links a {
+	word-wrap: break-word;
+}
+
+.sources-links {
+	text-align: left;
+}
