@@ -28,7 +28,7 @@ a:visited {	color: #8f509f; }
 
 #header { background: #84a4bf; border: none; }
 
-#middleblock { background: #a7c6d9; border: none;}
+#middleblock { background: white; border: none;}
 
 #menu {border: none; }
 
@@ -38,7 +38,7 @@ a:visited {	color: #8f509f; }
 .mitemb:hover {color: white;};
 .mitemb:visited {	color: #d8bcdf; }
  
-#maintext { background: #e5f5ff; }
+#maintext { background: white; }
 
 table#resume                { font: 13pt/120% Tahoma, sans serif;}
 table#resume tr.odd         { background: none; }  

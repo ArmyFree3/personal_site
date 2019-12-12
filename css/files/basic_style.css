@@ -199,6 +199,10 @@ a:visited { /* ���������� ������ */
 .bld {font-weight: bold;}     /* ���������� */
 .itl {font-style: italic;}    /* ������ */
 
+.cntr {
+	overflow-x: auto;
+}
+
 /* ---------------------------------------------------------------------------------------------------------- */
 /* ------------- ������� ������ ----------------------------------------------------------------------------- */
 
@@ -206,6 +210,25 @@ table#resume { /* ���� ������� */
 	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 0pt;
+}
+
+@media screen and (max-width: 768px) {
+	table#resume {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	table#resume td {
+		display: block;
+		margin: 0 auto;
+		text-align: center !important;
+		width: auto !important;
+	}
+}
+
+.list-sources a { 
+	word-break: break-all;
 }
 
 table#resume tr td {  /* ������ � ������� */
